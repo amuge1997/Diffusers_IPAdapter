@@ -4,9 +4,11 @@ ipadapter_sd15_plus_path = "./models/ip-adapter-plus_sd15.bin"  # 必须是bin, 
 image_encoder_sd15_path = "./model/openai--clip-vit-large-patch14.safetensors"  # 这个是错误的,用不了openai的模型且无法加载, 需要laion/CLIP-ViT-H-14-laion2B-s32B-b79K
 image_encoder_sd15_path这个加载不了, ip_adapter.py的第45行替换为, 直接从抱抱脸上下载到缓存里
 self.image_encoder =  CLIPVisionModelWithProjection.from_pretrained("laion/CLIP-ViT-H-14-laion2B-s32B-b79K").to(self.device, dtype=self.dtype)  
-注意:
+注意:  
+IPAdapter()初始化时要传入float32
+StableDiffusionImg2ImgPipeline.from_single_file()要传入float32
 修改精度为float32, 否则一些模型生成全黑图像  
-ip_adapter.py中的get_image_embeds(),init_proj_plus()中的float16改为32
+ip_adapter.py中的get_image_embeds(),init_proj_plus()中的float16改为float32
         
 
 
