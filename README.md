@@ -1,3 +1,4 @@
+微云有修改过的版本  
 需要在config中  
 sd15_base_model_path = "./models/inpaint-sqds.safetensors"  
 ipadapter_sd15_plus_path = "./models/ip-adapter-plus_sd15.bin"  # 必须是bin, 因为用的是pickle加载
