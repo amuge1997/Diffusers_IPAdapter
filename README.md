@@ -1,6 +1,6 @@
 需要在config中  
 sd15_base_model_path = "./models/inpaint-sqds.safetensors"  
-ipadapter_sd15_plus_path = "./models/ip-adapter-plus_sd15.safetensors"  
+ipadapter_sd15_plus_path = "./models/ip-adapter-plus_sd15.bin"  
 image_encoder_sd15_path = "./model/openai--clip-vit-large-patch14.safetensors"  
 
 
