@@ -1,3 +1,9 @@
+需要在config中  
+sd15_base_model_path = "./models/inpaint-sqds.safetensors"  
+ipadapter_sd15_plus_path = "./models/ip-adapter-plus_sd15.safetensors"  
+image_encoder_sd15_path = "./model/openai--clip-vit-large-patch14.safetensors"  
+
+
 # IPAdapter implementation for :hugs: Diffusers
 
 This is an alternative implementation of the [IPAdapter](https://github.com/tencent-ailab/IP-Adapter) models for Huggingface Diffusers. The main differences with the offial repository:
