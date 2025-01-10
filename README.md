@@ -1,7 +1,10 @@
 需要在config中  
 sd15_base_model_path = "./models/inpaint-sqds.safetensors"  
-ipadapter_sd15_plus_path = "./models/ip-adapter-plus_sd15.bin"  
+ipadapter_sd15_plus_path = "./models/ip-adapter-plus_sd15.bin"  # 必须是bin, 因为用的是pickle加载
 image_encoder_sd15_path = "./model/openai--clip-vit-large-patch14.safetensors"  
+image_encoder_sd15_path这个加载不了, ip_adapter.py的第45行替换为, 直接从抱抱脸上下载到缓存里
+self.image_encoder =  CLIPVisionModelWithProjection.from_pretrained("openai/clip-vit-large-patch14").to(self.device, dtype=self.dtype)
+        
 
 
 # IPAdapter implementation for :hugs: Diffusers
